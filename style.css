@@ -1,0 +1,179 @@
+body {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    background-image: url(images/background1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    text-align: center;
+    color: #821433;
+}
+
+h2 {
+    color: #821433;
+}
+
+.smoothie-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: stretch; 
+    gap: 40px;               
+    margin: 40px auto;
+    width: 100%;
+    max-width: 900px;   
+}
+
+.smoothie-options, .smoothie-summary {
+    color: #1E6E20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;   
+    width: 100%;
+    max-width: 380px; 
+    background: rgba(255, 255, 255, 0.25); 
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    flex: none !important; 
+}
+
+.base-liquid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    accent-color: #1E6E20;
+    cursor: pointer;
+}
+
+.base-liquid > section {
+    display: flex;
+    align-items: center;
+    width: 100px;   
+    justify-content: flex-start;
+}
+
+.fruit-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    accent-color: #1E6E20;
+    cursor: pointer;
+}
+
+.fruit-options > section {
+    display: flex;
+    align-items: center;
+    width: 100px;   
+    justify-content: flex-start;
+}
+
+.protein {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    accent-color: #1E6E20;
+    cursor: pointer;
+}
+
+.protein > section {
+    display: flex;
+    align-items: center;
+    width: 100px;   
+    justify-content: flex-start;
+}
+
+#reset-btn {
+    margin-top: 50px;
+    background: #821433;
+    color: #1E6E20;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 3px solid #1E6E20;
+    width: 120px;
+    height: 40px;
+    font-size: 25px;
+    font-family: "Fredoka", sans-serif;
+}
+
+.base-liquid label, .fruit-options label, .protein label{
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1.1rem;
+    font-weight: 600px;
+    cursor: pointer;
+}
+
+.base-liquid input, .fruit-options input, .protein input {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+#choice-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 16px 0;
+    text-align: left;
+    display: inline-block;
+}
+
+#choice-list li {
+    font-family: 'Fredoka', sans-serif; 
+    color: #1E6E20;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    list-style-type: none;
+}
+
+@media (max-width: 600px) {
+    .smoothie-bar {
+        flex-direction: column;
+    }
+}
+
+.base-liquid > section:hover, .fruit-options > section:hover, .protein > section:hover {
+    color: #FF3E6C;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 6px;
+    transition: all 0.25s ease-in-out;
+}
+
+.smoothie-options label, .smoothie-options input {
+    cursor: pointer !important;
+}
+
+.smoothie-options input[type="radio"]:hover, .smoothie-options input[type="checkbox"]:hover:not(:disabled) {
+    transform: scale(1.35);
+    filter: brightness(1.2);
+    box-shadow: 0 0 8px rgba(30, 63, 32, 0.5);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#reset-btn {
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#reset-btn:hover {
+    background-color: #B52B56 !important; 
+    color: #FFFFFF !important;            
+    transform: translateY(-3px);          
+    box-shadow: 0 6px 12px rgba(181, 43, 86, 0.35); 
+}
+
+#reset-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(181, 43, 86, 0.2);
+}

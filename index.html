@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoothie Bar Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Smoothie Bar</h1>
+    </header>
+
+    <main class="smoothie-bar">
+
+        <section class="smoothie-options">
+            <h2>Build Your Smoothie</h2>
+            <h3>Let's start with the base liquid. Choose your base:</h3>
+            <section class="base-liquid">
+                <section>
+                    <input type="radio" name="base-liquid" id="milk" value="milk">
+                    <label for="milk">Milk (120 kcal)</label>
+                </section>
+                
+                <section>
+                    <input type="radio" name="base-liquid" id="water" value="water">
+                    <label for="water">Water (0 kcal)</label>
+                </section>
+            </section>
+
+            <h3>Select your fruit combination. Choose 3 fruits below:</h3>
+            <section class="fruit-options">
+                <section>
+                    <input type="checkbox" name="fruit-options" id="banana" value="banana">
+                    <label for="banana">Banana (105 kcal)</label>
+                </section>
+
+                <section>
+                    <input type="checkbox" name="fruit-options" id="strawberry" value="strawberry">
+                    <label for="strawberry">Strawberry (50 kcal)</label>
+                </section>
+
+                <section>
+                    <input type="checkbox" name="fruit-options" id="mango" value="mango">
+                    <label for="mango">Mango (90 kcal)</label>
+                </section>
+
+                <section>
+                    <input type="checkbox" name="fruit-options" id="pineapple" value="pineapple">
+                    <label for="pineapple">Pineapple (80 kcal)</label>
+                </section>
+
+                <section>
+                    <input type="checkbox" name="fruit-options" id="blueberry" value="blueberry">
+                    <label for="blueberry">Blueberry (85 kcal)</label>
+                </section>
+                
+            </section>
+            
+            <h3>Would you like to add some protein?</h3>
+            <section class="protein">
+                <section>
+                    <input type="radio" name="protein" value="yes" id="yes-protein">
+                    <label for="yes-protein">Protein (100 kcal)</label>
+                </section>
+                <section>
+                    <input type="radio" name="protein" value="no" id="no-protein">
+                    <label for="no-protein">No Protein (0 kcal)</label>
+                </section>
+
+            </section>
+            
+            <section>
+                <button id="reset-btn">RESET</button>
+            </section>
+
+        </section>
+
+        <section class="smoothie-summary">
+            <h2>Ingredients Cup</h2>
+            <ul id="choice-list"></ul>
+            <p>Total Calories: <span id="totalCalories">0</span> kcal</p>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
