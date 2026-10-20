@@ -14,6 +14,8 @@ Built With:
 *CSS (Flexbox, no external libraries)
 *JavaScript
 
+**Live demo:** [https://j-agyeiwaa.github.io/final-project/](https://j-agyeiwaa.github.io/final-project/)
+
 How to Run:
 *Download or clone this repository
 *Open index.html in your browser
