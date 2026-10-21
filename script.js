@@ -1,10 +1,10 @@
 const smoothieInputs = document.querySelectorAll('.smoothie-options input[type="radio"], .smoothie-options input[type="checkbox"]')
 const fruitCheckboxes = document.querySelectorAll('.fruit-options input[type="checkbox"]')
-const calorieDisplay = document.getElementById('totalCalories')
-const ingredientList = document.getElementById('choice-list')
+const totalCaloriesDisplay = document.getElementById('totalCalories')
+const ingredientsCupList = document.getElementById('choice-list')
 const resetSmoothieBtn = document.getElementById('reset-btn')
 
-const calorieTable = {
+const smoothieCalorieTable = {
     'milk': 120,
     'water': 0,
     'banana': 105,
@@ -17,45 +17,45 @@ const calorieTable = {
 }
 
 function updateSmoothieSummary() {
-    let combinedCalories = 0
-    let selectedFruitsCount = 0
+    let totalSmoothieCalories = 0
+    let selectedFruitCount = 0
     
-    ingredientList.innerHTML = ""
-    fruitCheckboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-            selectedFruitsCount++
+    ingredientsCupList.innerHTML = ""
+    fruitCheckboxes.forEach(fruitCheckbox => {
+        if (fruitCheckbox.checked) {
+            selectedFruitCount++
         }
     })
 
-    fruitCheckboxes.forEach(checkbox => {
-        if (!checkbox.checked) {
-            checkbox.disabled = selectedFruitsCount >= 3
+    fruitCheckboxes.forEach(fruitCheckbox => {
+        if (!fruitCheckbox.checked) {
+            fruitCheckbox.disabled = selectedFruitCount >= 3
         }
     });
 
-    smoothieInputs.forEach(input => {
-        if (input.checked) {
-            const itemValue = input.value;
-            combinedCalories += calorieTable[itemValue] || 0
+    smoothieInputs.forEach(smoothieInput => {
+        if (smoothieInput.checked) {
+            const ingredientKey = smoothieInput.value;
+            totalSmoothieCalories += smoothieCalorieTable[ingredientKey] || 0
 
-            const labelElement = document.querySelector(`label[for="${input.id}"]`)
-            if (labelElement) {
-                const listItem = document.createElement('li')
-                listItem.textContent = `• ${labelElement.textContent}`
-                ingredientList.appendChild(listItem)
+            const ingredientLabel = document.querySelector(`label[for="${smoothieInput.id}"]`)
+            if (ingredientLabel) {
+                const ingredientEntry = document.createElement('li')
+                ingredientEntry.textContent = `• ${ingredientLabel.textContent}`
+                ingredientsCupList.appendChild(ingredientEntry)
                 }
         }
     })
 
-    calorieDisplay.textContent = combinedCalories
+    totalCaloriesDisplay.textContent = totalSmoothieCalories
 }
 
 function resetSmoothieCustomizer() {
-    smoothieInputs.forEach(input => {
-        input.checked = false;
+    smoothieInputs.forEach(smoothieInput => {
+        smoothieInput.checked = false;
         
-        if (input.type === 'checkbox') {
-            input.disabled = false;
+        if (smoothieInput.type === 'checkbox') {
+            smoothieInput.disabled = false;
         }
     });
     
@@ -63,8 +63,8 @@ function resetSmoothieCustomizer() {
 }
 
 
-smoothieInputs.forEach(input => {
-    input.addEventListener('change', updateSmoothieSummary)
+smoothieInputs.forEach(smoothieInput => {
+    smoothieInput.addEventListener('change', updateSmoothieSummary)
 })
 
 resetSmoothieBtn.addEventListener('click', resetSmoothieCustomizer)
